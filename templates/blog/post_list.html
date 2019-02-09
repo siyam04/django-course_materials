@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post List</title>
+</head>
+<body>
+    <h1>All post Lists:</h1>
+    <hr>
+    {% for post in all_posts %}
+
+            <b>ID:</b> {{post.id}} <br>
+            <b>Title:</b> {{post.title}}<br>
+            <b>Author:</b> {{post.author}}<br>
+            <b>Status:</b> {{post.is_active}}<br>
+            <b>Detail:</b> {{post.details}}<br>
+
+        <hr>
+    {% endfor %}
+</body>
+</html>
