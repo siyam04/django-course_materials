@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Update</title>
+</head>
+<body>
+
+    <h1>Update your post</h1>
+    <hr>
+
+    <form method="post">
+        {% csrf_token %}
+        {{update_form.as_p}}
+        <button type="submit" name="">Update</button>
+    </form>
+
+</body>
+</html>

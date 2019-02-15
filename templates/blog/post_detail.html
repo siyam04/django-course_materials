@@ -16,5 +16,9 @@
     <b>Detail:</b> {{single_post.details}}<br>
     <hr>
 
+    <!--<button><a href="{% url 'detail' single_post.id %}">Details</a></button><br>-->
+    <button><a href="{% url 'update' single_post.id %}">Edit</a></button><br>
+    <button><a href="{% url 'delete' single_post.id %}">Delete</a></button><br>
+
 </body>
 </html>

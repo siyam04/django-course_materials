@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Post List</title>
 </head>
+
 <body>
     <h1>All post Lists:</h1>
     <hr>
@@ -15,7 +16,10 @@
             <b>Status:</b> {{post.is_active}}<br>
             <b>Detail:</b> {{post.details}}<br>
 
+            <button><a href="{% url 'detail' post.id %}">Details</a></button><button><a href="{% url 'update' post.id %}">Edit</a></button><button><a href="{% url 'delete' post.id %}">Delete</a></button>
+
         <hr>
     {% endfor %}
+
 </body>
 </html>
