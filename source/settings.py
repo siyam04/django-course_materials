@@ -25,6 +25,9 @@ SECRET_KEY = 'of-*=vq5-ur&yl!&$o@rv-_d$r=d**qoy0@p52rr$(ad(jc58q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Debugging Toolbar Adding
+INTERNAL_IPS = ['127.0.0.1']
+
 ALLOWED_HOSTS = []
 
 
@@ -38,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Third-party App
+    'debug_toolbar',
+    'Faker',
+
     # Custom Apps
     'blog',
 ]
@@ -50,6 +57,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Debug Toolbar Middleware Adding
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'source.urls'

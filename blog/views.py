@@ -10,6 +10,9 @@ from django.shortcuts import (
 from blog.models import Post
 from blog.forms import PostCreateForm
 
+# App importing
+from source.views import home
+
 
 def post_list(request):
     """Returns all posts"""
@@ -69,7 +72,8 @@ def post_delete(request, id=None, template_name='blog/post_delete.html'):
 
     if request.method == 'POST':
         delete_query.delete()
-        return redirect('list')
+        # return redirect('list')
+        return home(request)  # Returning custom function
 
     return render(request, template_name, {'delete_query':delete_query})
 
