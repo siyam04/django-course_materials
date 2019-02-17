@@ -9,10 +9,14 @@
 8. Debug Toolbar
 9. Faker **
 ----------------------------------------------------------------------------
-10. User Authentication
+10. User Authentication (Signup, Profile(create, edit), Login, Logout)
 11. Decorators
+12. Linking All The Posts
+13. Image Uploading
+14. Static files and Bootstrap
+15. Create a Post using Upgrade Forms
 ----------------------------------------------------------------------------
-12. Relational Query
+13. Relational Query
 13. Django Searching
 14. Django Paginator
 ----------------------------------------------------------------------------
