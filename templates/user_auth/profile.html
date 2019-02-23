@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+
+<body>
+
+    {% if request.user.is_authenticated %}
+        <h1>Welcome <b style="color: orangered">{{request.user}}!</b></h1>
+    {% endif %}
+
+    <h2>You have no profile</h2>
+    <h3><a href="{% url 'profile-create' %}">Create your profile</a></h3>
+
+</body>
+</html>
+

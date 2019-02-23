@@ -16,21 +16,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from django.conf.urls.static import static
 
 # Same Directory
 from .views import home
 
-# App importing
-from blog.views import post_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
+    path('home/', home, name='home'),
 
     # App URLS
     path('blog/', include('blog.urls')),
+    path('user/', include('user_auth.urls')),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 # Project source URL Debugging integration
 if settings.DEBUG:
@@ -41,3 +42,4 @@ if settings.DEBUG:
         path('__debug__/', include(debug_toolbar.urls)),
 
     ] + urlpatterns
+

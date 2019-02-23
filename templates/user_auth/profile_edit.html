@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Edit</title>
+</head>
+
+<body>
+    <h1>Edit Your Profile</h1>
+    <form action="#" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}<br>
+
+        <!--<label class="control-label">Profile Name</label>-->
+            <!--{{ form.profile_name }}-->
+        <!--<label class="control-label">Profile Image</label>-->
+            <!--{{ form.profile_image }}-->
+        <!--<label class="control-label">Email</label>-->
+            <!--{{ form.email }}-->
+
+        <button type="submit">SAVE</button>
+
+    </form>
+
+</body>
+</html>

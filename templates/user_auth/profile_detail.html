@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Detail</title>
+</head>
+
+<body>
+
+    <h1>Profile Detail</h1>
+
+    {% if profile %}
+        {% if profile.profile_image %}
+            <img src="{{ profile.profile_image.url }}" width="240" alt="profile_pic">
+        {% endif %}
+        <p>ID: {{profile.user.id}}</p>
+        <p>Username: {{profile.user.username}}</p>
+        <p>First name: {{profile.user.first_name}}</p>
+        <p>Last name: {{profile.user.last_name}}</p>
+        <p>Email: {{profile.user.email}}</p>
+
+    {% else %}
+        <h1> You have no profile </h1>
+        <hr>
+        <h3><a href="{% url 'profile-create' %}">Create </a>your profile</h3>
+
+    {% endif %}
+
+    <h3><a href="{% url 'profile-edit' %}">EDIT</a></h3>
+
+    <h3>Back to <a href="{% url 'home' %}">home</a></h3>
+
+
+</body>
+</html>

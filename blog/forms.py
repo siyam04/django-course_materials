@@ -16,6 +16,6 @@ class PostCreateForm(forms.ModelForm):
         widgets = {
             'title': TextInput(attrs={'class': 'form-control'}),
             'details': Textarea(attrs={'class': 'form-control'}),
-            'author': TextInput(attrs={'class': 'form-control'}),
+            'author': Select(attrs={'class': 'form-control'}),
             # 'is_active': Select(attrs={'class': 'form-control'}),
         }

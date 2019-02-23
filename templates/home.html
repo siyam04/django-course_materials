@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+    {% if request.user.is_authenticated %}
+        <h1>Welcome <b style="color: orangered">{{request.user}}</b>! This is home page.</h1>
+    {% else %}
+        <h1>Welcome! This is home page.</h1>
+    {% endif %}
+    <hr>
+
+    {% if request.user.is_authenticated %}
+        {% if profile %}
+            <p>See My Profile@ <a class="active" href="{% url 'profile-detail' profile.id %}"><b style="color: orangered">{{ request.user.username }}</b></a></p>
+        <!--<a class="active" href="{% url 'profile' %}"> {{ request.user.profile_name }} </a><br>-->
+        {% else %}
+            <a class="active" href="{% url 'profile-create' %}"> @<b style="color: orangered">{{ request.user.username }}   </b></a>
+        {% endif %}
+
+    <a class="active" href="{% url 'logout' %}"><b>  Logout</b></a>
+
+    {% else %}
+        <a class="active" href="{% url 'login' %}">Login</a><br>
+        <a class="active" href="{% url 'signup' %}">Signup</a>
+    {% endif %}
+
+    <hr>
+    <h1>All post Lists:</h1>
+
+    {% for post in all_posts %}
+        <b>ID:</b> {{post.id}} <br>
+        <b>Title:</b> {{post.title}}<br>
+        <b>Author:</b> {{post.author.username}}<br>
+        <b>Status:</b> {{post.is_active}}<br>
+        <b>Detail:</b> {{post.details}}<br>
+    <br>
+        <button><a href="{% url 'detail' post.id %}">Details</a></button><button><a href="{% url 'update' post.id %}">Edit</a></button><button><a href="{% url 'delete' post.id %}">Delete</a></button>
+
+        <hr>
+    {% endfor %}
+
+</body>
+</html>

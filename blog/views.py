@@ -19,7 +19,8 @@ def post_list(request):
     all_posts = get_list_or_404(Post)
     # all_posts = Post.objects.all()
     context = {'all_posts': all_posts}
-    template = 'blog/post_list.html'
+    # template = 'blog/post_list.html'
+    template = 'home.html'
     return render(request, template, context)
 
 
