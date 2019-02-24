@@ -4,10 +4,10 @@ from django.contrib import admin
 from user_auth.models import Profile
 
 
-# class ProfileAdmin(admin.ModelAdmin):
-#     list_display = ['id', 'user', 'profile_name', 'email']
-#     list_display_links = ['profile_name']
-#     list_filter = ['user', 'profile_name']
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ['id', 'user', 'profile_image']
+    list_display_links = ['user']
+    list_filter = ['user']
 
 
-admin.site.register(Profile)
+admin.site.register(Profile, ProfileAdmin)

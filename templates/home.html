@@ -20,7 +20,7 @@
         {% else %}
             <a class="active" href="{% url 'profile-create' %}"> @<b style="color: orangered">{{ request.user.username }}   </b></a>
         {% endif %}
-
+    <br>
     <a class="active" href="{% url 'logout' %}"><b>  Logout</b></a>
 
     {% else %}

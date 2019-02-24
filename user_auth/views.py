@@ -3,7 +3,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 
-
 # same app
 from user_auth.forms import SignUpForm, ProfileForm
 from user_auth.models import Profile
@@ -47,7 +46,6 @@ def profile(request):
 def profile_create(request):
     """Create Profile"""
 
-
     if request.method == 'POST':
         form = ProfileForm(request.POST, request.FILES)
         if form.is_valid():
@@ -56,7 +54,6 @@ def profile_create(request):
             profile.save()
             # messages.success(request, 'Your Profile has been created!')
             return redirect('profile-detail', id=profile.id)
-            # return redirect('profile-detail', id=profile.id)
 
     context = {
         'form': ProfileForm(),
